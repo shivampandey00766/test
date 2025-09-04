@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint to 3D Model Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blueprint to 3D Model Converter</h1>
+    </header>
+    <main>
+        <div class="upload-container">
+            <input type="file" id="file-input" accept="image/*">
+            <label for="file-input">Choose a blueprint</label>
+        </div>
+        <div class="preview-container" id="preview-container">
+            <canvas id="c"></canvas>
+        </div>
+    </main>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
