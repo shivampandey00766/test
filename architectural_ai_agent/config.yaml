@@ -1,0 +1,117 @@
+# Configuration file for Architectural AI Agent
+# This file contains all configurable parameters for the system
+
+# Model configurations
+model:
+  segmentation:
+    architecture: "unet"  # Options: unet, deeplabv3+, fpn, pspnet, custom
+    encoder: "resnet50"   # Options: resnet50, resnet101, efficientnet-b4
+    num_classes: 15
+    input_size: [512, 512]
+    
+  depth_estimation:
+    architecture: "custom"
+    input_size: [256, 256]
+    
+  object_detection:
+    architecture: "custom"
+    num_classes: 13
+    confidence_threshold: 0.5
+    nms_threshold: 0.4
+
+# Image preprocessing settings
+preprocessing:
+  target_size: [1024, 1024]
+  noise_reduction: true
+  perspective_correction: true
+  line_enhancement: true
+  adaptive_threshold: true
+
+# 3D reconstruction settings
+reconstruction:
+  output_format: "obj"  # Options: obj, gltf, stl, ply
+  
+  # Standard architectural dimensions (in meters)
+  standard_heights:
+    wall_height: 2.4
+    door_height: 2.1
+    window_height: 1.2
+    window_sill: 0.9
+    counter_height: 0.9
+    cabinet_height: 2.1
+    fixture_height: 0.8
+  
+  # Material thicknesses (in meters)
+  wall_thickness: 0.15
+  door_thickness: 0.05
+  window_thickness: 0.02
+  floor_thickness: 0.2
+  ceiling_thickness: 0.1
+  
+  # Quality settings
+  mesh_optimization: true
+  texture_generation: true
+  material_assignment: true
+
+# Training configurations
+training:
+  batch_size: 8
+  learning_rate: 0.001
+  epochs: 100
+  validation_split: 0.2
+  early_stopping_patience: 10
+  weight_decay: 1e-4
+  
+  # Data augmentation
+  augmentation:
+    rotation_range: 15
+    scale_range: [0.8, 1.2]
+    brightness_range: [0.8, 1.2]
+    noise_probability: 0.1
+
+# System paths
+paths:
+  models_dir: "models"
+  data_dir: "data"
+  output_dir: "output"
+  logs_dir: "logs"
+  cache_dir: "cache"
+
+# Hardware settings
+device: "auto"  # Options: auto, cpu, cuda, mps
+
+# Logging configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_logging: true
+  console_logging: true
+
+# Performance settings
+performance:
+  max_workers: 4
+  memory_limit: "8GB"
+  batch_processing_chunk_size: 10
+  enable_caching: true
+  
+# Visualization settings
+visualization:
+  figure_size: [12, 8]
+  dpi: 300
+  interactive_plots: true
+  save_formats: ["png", "html"]
+  color_scheme: "default"
+
+# Quality control
+quality:
+  min_wall_length: 30  # pixels
+  min_room_area: 1000  # pixels²
+  min_door_width: 15   # pixels
+  min_window_width: 20 # pixels
+  
+# Export settings
+export:
+  include_metadata: true
+  compress_models: false
+  generate_thumbnails: true
+  create_summary_report: true

@@ -1,0 +1,48 @@
+# Core ML and Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+tensorflow>=2.13.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Computer Vision
+opencv-python>=4.8.0
+pillow>=10.0.0
+scikit-image>=0.21.0
+
+# 3D Modeling and Geometry
+open3d>=0.17.0
+trimesh>=4.0.0
+pyglet>=2.0.0
+matplotlib>=3.7.0
+
+# Image Processing and Feature Detection
+scikit-learn>=1.3.0
+shapely>=2.0.0
+rasterio>=1.3.0
+geopandas>=0.13.0
+
+# Neural Network Architectures
+segmentation-models-pytorch>=0.3.0
+timm>=0.9.0
+transformers>=4.30.0
+
+# Utilities and Data Handling
+tqdm>=4.65.0
+pyyaml>=6.0
+json5>=0.9.0
+click>=8.1.0
+requests>=2.31.0
+
+# Visualization
+plotly>=5.15.0
+seaborn>=0.12.0
+
+# Testing and Development
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.0.0
+
+# Optional: Blender Python API (if using Blender)
+# bpy>=3.6.0  # Uncomment if using Blender integration
