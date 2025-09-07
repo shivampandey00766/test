@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Plan2Scene Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; margin: 2rem; }
+    .card { max-width: 640px; padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 12px; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    input[type="number"], input[type="file"] { width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 8px; }
+    button { margin-top: 1rem; padding: 0.75rem 1rem; background: #111827; color: white; border: 0; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #0b1220; }
+  </style>
+  <script>
+    function onSubmit() {
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true; btn.innerText = 'Processing...';
+    }
+  </script>
+  </head>
+<body>
+  <div class="card">
+    <h1>Plan2Scene Preview</h1>
+    <p>Upload a 2D floor plan image to generate a simple 3D wall mesh.</p>
+    <form action="/process" method="post" enctype="multipart/form-data" onsubmit="onSubmit()">
+      <label>Floor plan image (PNG/JPG)</label>
+      <input type="file" name="file" accept="image/png,image/jpeg" required>
+
+      <label>DPI (default 300)</label>
+      <input type="number" name="dpi" placeholder="300">
+
+      <label>Wall height meters (default 3.0)</label>
+      <input type="number" step="0.01" name="wall_height" placeholder="3.0">
+
+      <label>Wall thickness meters (default 0.2)</label>
+      <input type="number" step="0.01" name="wall_thickness" placeholder="0.2">
+
+      <button id="submitBtn" type="submit">Generate</button>
+    </form>
+  </div>
+</body>
+</html>
