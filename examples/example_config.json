@@ -1,0 +1,30 @@
+{
+  "preprocessing": {
+    "denoise_method": "bilateral",
+    "contrast_method": "clahe",
+    "binarize_method": "adaptive",
+    "perspective_correction": true
+  },
+  "segmentation": {
+    "use_cnn": true,
+    "use_heuristic": true,
+    "confidence_threshold": 0.5
+  },
+  "vectorization": {
+    "min_contour_area": 100,
+    "approximation_epsilon": 0.02,
+    "min_line_length": 10.0,
+    "optimize_geometry": true
+  },
+  "reconstruction": {
+    "wall_height": 2.4,
+    "floor_thickness": 0.2,
+    "ceiling_height": 2.7,
+    "reconstruction_method": "blender"
+  },
+  "export": {
+    "formats": ["obj", "gltf", "svg"],
+    "include_metadata": true,
+    "generate_visualizations": true
+  }
+}
