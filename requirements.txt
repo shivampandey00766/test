@@ -1,0 +1,6 @@
+numpy>=1.26
+opencv-python-headless>=4.8
+pillow>=10.3
+scikit-image>=0.22
+shapely>=2.0
+trimesh>=4.4
