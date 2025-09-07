@@ -1,0 +1,3 @@
+# Minimal requirements for the synthetic demo (standard library only)
+# Left empty intentionally; real project would list: numpy, opencv-python, torch/ tensorflow, trimesh/blender, etc.
+
