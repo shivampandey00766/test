@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Plan2Scene Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; margin: 2rem; }
+    .row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .card { padding: 1rem; border: 1px solid #e5e7eb; border-radius: 12px; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+    a.button { display: inline-block; padding: 0.5rem 0.75rem; background: #111827; color: white; border-radius: 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <a class="button" href="/">← New upload</a>
+  <div class="row">
+    <div class="card">
+      <h2>Download</h2>
+      <p>
+        <a class="button" href="/download/{{ model }}">Download 3D model</a>
+        <a class="button" href="/download/{{ json }}" style="margin-left: 0.5rem">Download JSON</a>
+      </p>
+      <p><small>Files are saved in server output folder.</small></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -38,4 +38,10 @@ Usage
   - --dpi INT: pixels-per-inch to meters scale (default 300)
   - --wall-height FLOAT: wall extrusion height in meters (default 3.0)
   - --wall-thickness FLOAT: wall thickness in meters (default 0.2)
+
+Web Preview (FastAPI)
+- Start the server:
+  - uvicorn plan2scene.web:app --host 0.0.0.0 --port 8000
+- Open in your browser:
+  - http://localhost:8000
 # test
